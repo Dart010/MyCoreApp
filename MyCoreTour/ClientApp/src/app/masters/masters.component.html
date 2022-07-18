@@ -1,0 +1,44 @@
+<h1>My Masters</h1>
+
+<div>
+  <label for="new-hero">Master name: </label>
+  <input id="new-hero" [(ngModel)]="master.name" />
+
+  <!--(click) passes input value to add() and then clears the input-->
+  <button type="button" class="add-button" (click)="addMaster()">
+    Add master
+  </button>
+</div>
+
+<p *ngIf="!masters"><em>Loading...</em></p>
+
+<!--<ul class="heroes">
+  <li *ngFor="let master of masters">-->
+<!--<a [routerLink]="['/master/detail/{{master.id}}']"></a>-->
+<!--<a>{{master.name}}</a>
+
+    <button type="button" class="delete" title="delete hero" (click)="deleteMaster(master)">
+      x
+    </button>
+
+  </li>
+</ul>-->
+
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="masters">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let master of masters">
+      <td>{{ master.name }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="deleteMaster(master)">Delete</button>
+        <button class="btn btn-primary" routerLink="/master/detail/{{master.id}}">Edit</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

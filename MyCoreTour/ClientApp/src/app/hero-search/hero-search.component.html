@@ -1,0 +1,25 @@
+<div id="search-component">
+  <label for="search-box">Hero Search</label>
+  <input id="search-box" [(ngModel)]="hero.name" (input)="searchHero(hero)" placeholder="Hero name" />
+
+  <ul class="search-result">
+    <li *ngFor="let hero of heroes">
+      <a routerLink="/hero/detail/{{hero.id}}">
+        {{hero.name}}
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!--<div id="search-component">
+  <label for="search-box">Hero Search</label>
+  <input id="search-box" [(ngModel)]="hero.name" placeholder="Hero name" />
+
+  <ul class="search-result">  <!--asp-controller="Hero" asp-action="SearchHero"--
+<li *ngFor="let hero of heroes">
+  <a routerLink="/hero/detail/{{hero.id}}">
+    {{hero.name}}
+  </a>
+</li>
+  </ul>
+</div>-->
