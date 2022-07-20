@@ -23,13 +23,13 @@ export class MasterDetailComponent  {
 
   private getMaster() {
     const id = this.route.snapshot.paramMap.get('id');
-    this.http.get<Master>(this.baseUrl + 'masters/' + id).subscribe(result => {
+    this.http.get<Master>(this.baseUrl + 'api/masters1/' + id).subscribe(result => {
       this.master = result;
     }, error => console.error(error));
   }
 
   public updateHero(master: Master) {
-    this.http.post<Master>(this.baseUrl + 'masters/' + this.master.id, master).subscribe(result => {
+    this.http.put<Master>(this.baseUrl + 'api/masters1/' + this.master.id, master).subscribe(result => {
       this.goBack();
     }, error => console.error(error));
   }
@@ -37,4 +37,18 @@ export class MasterDetailComponent  {
   goBack(): void {
     this.location.back();
   }
+
+  // implementare cu controller-ul HeroesController
+  //private getMaster() {
+  //  const id = this.route.snapshot.paramMap.get('id');
+  //  this.http.get<Master>(this.baseUrl + 'masters/' + id).subscribe(result => {
+  //    this.master = result;
+  //  }, error => console.error(error));
+  //}
+
+  //public updateHero(master: Master) {
+  //  this.http.post<Master>(this.baseUrl + 'masters/' + this.master.id, master).subscribe(result => {
+  //    this.goBack();
+  //  }, error => console.error(error));
+  //}
 }

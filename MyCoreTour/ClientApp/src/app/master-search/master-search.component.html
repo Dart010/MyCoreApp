@@ -1,8 +1,8 @@
 <div id="search-component">
   <label for="search-box">Master Search</label>
-  <input id="search-box" [(ngModel)]="master.name" (input)="searchMaster(master)" placeholder="Master name" />
+  <input id="search-box" [(ngModel)]="searchTermMaster" (input)="searchMasters()" placeholder="Master name" />
 
-  <ul class="search-result">  <!--asp-controller="Master" asp-action="SearchMaster"-->
+  <ul class="search-result"> 
     <li *ngFor="let master of masters">
       <a routerLink="/master/detail/{{master.id}}">
         {{master.name}}

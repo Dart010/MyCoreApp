@@ -1,6 +1,6 @@
 <div id="search-component">
   <label for="search-box">Hero Search</label>
-  <input id="search-box" [(ngModel)]="hero.name" (input)="searchHero(hero)" placeholder="Hero name" />
+  <input id="search-box" [(ngModel)]="searchTerm" (input)="searchHeroes()" placeholder="Hero name" />
 
   <ul class="search-result">
     <li *ngFor="let hero of heroes">

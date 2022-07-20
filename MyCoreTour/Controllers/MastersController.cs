@@ -31,7 +31,7 @@ namespace MyCoreTour.Controllers
         }
 
         [HttpGet]
-        [Route("")]
+        //[Route("")]
         [ActionName("GetMaster")]
         public Master[] Get()
         {

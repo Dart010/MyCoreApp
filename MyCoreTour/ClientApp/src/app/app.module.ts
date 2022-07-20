@@ -37,11 +37,11 @@ import { MasterSearchComponent } from './master-search/master-search.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: DashboardComponent, pathMatch: 'full' },
-      { path: 'heroes', component: HeroesComponent },
-      { path: 'masters', component: MastersComponent },
-      { path: 'hero/detail/:id', component: HeroDetailComponent },
       { path: 'master/detail/:id', component: MasterDetailComponent },
+      { path: 'hero/detail/:id', component: HeroDetailComponent },
+      { path: 'masters', component: MastersComponent },
+      { path: 'heroes', component: HeroesComponent },
+      { path: '', component: DashboardComponent, pathMatch: 'full' }
     ])
   ],
   providers: [],
